@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean&Bloom</title>
+    <style>
+        body {
+            background-color: #FBF2DD;
+        }
+        #flex {
+            background-color: #FBF2DD;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        #container-flex-nav {
+            display: flex;
+            background-color: #373b00;
+            justify-content: space-around;
+            color: antiquewhite;
+            align-items: center;
+            font-size: 1.5rem;
+            height: 100px;
+            gap: 40px;
+        }
+        #container-flex-nav a {
+            flex: max-content 0 0;
+            color: antiquewhite;
+        }
+        #logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+        #one-cafe-pic {
+            height: 70vh;
+            object-fit: cover; 
+            margin-bottom: 20px;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            grid-template-rows: 1fr;
+            column-gap: 30px;
+            align-items: center;
+            
+        }
+        #cafe-story {
+            display: flex;
+            max-height: 100%;
+            align-items: center;
+            margin-left: 30px;
+            font-size: 1.5rem;
+            background-color: rgb(255, 255, 255);
+            padding: 2%;
+            border-radius: 10px;
+            color: #373b00;
+        } 
+        #cafe-story > p {
+            height: 100%;
+            margin: 0;
+        }
+        #grid > img {
+            width: 100%;
+            height: 80%;
+            border-radius: 10px;
+        }
+        #menu-flex {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .top-sellers-img {
+            height: 90%;
+            width: 90%;
+            object-fit: cover;
+            margin-top: 10px;
+        }
+        #top-sellers-head {
+            align-self: center;
+        }
+        .top-sellers {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            width: 25%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .top-sellers p.name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .top-sellers p.info {
+            width: 80%;
+            font-size: larger;
+        }
+        .top-sellers p.price {
+            color: red;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        #whole-menui {
+            text-decoration-color: #b7c03d ;}
+        #whole-menu {
+            padding: 0px 15px;
+            color: #373b00;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            font-family:'Times New Roman', Times, serif;
+        }
+        #top-sellers-head { 
+            font-size: 3.5rem;
+            color: #373b00;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #9cb573; 
+            margin: 40px 0; 
+            width: 80%; 
+            align-self: center;
+        }
+        div#reviews {
+            display: flex;
+            height: 70vh;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+        div#reviews img {
+            width: 85%;
+            align-self: center;
+        }
+        div#reviews h1 {
+            align-self: center;
+            font-size: 3.5rem;
+            color: #373b00;
+        }
+        #flex-delivery {
+            margin-left: 150px;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            text-align: center;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #flex-delivery > h2 {
+            font-size: 3rem;
+            color: #373b00;
+            font-weight: bolder;
+        }
+        #flex-delivery > p {
+            font-size: 1.5rem;
+            color: #373b00;
+        }
+        #flex-delivery > button {
+            width: max-content;
+            background-color: #9cb573;
+            color: #ffffff;
+            border-radius: 10px;
+            font-size: 2rem;
+            padding: 20px;
+            border: none;
+        }
+        #order-online {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 70vh;
+            width: 100%;
+            margin-bottom: 200px;
+        }
+        #order-online img {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+        }
+        #flex-icons {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 30px;
+        }
+        #flex-icons img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50px;
+        }
+        #contact-us h2 {
+            font-size: 1.5rem;
+            color: #373b00;
+            text-align: center;
+        }
+        footer{
+            color: #373b00;
+            text-align: center;
+            margin-top: 30px;
+        }
+        @media (max-width: 1200px) {
+            #order-online img {
+            width: 95%;
+            height: 70vh;
+            }
+
+            div#reviews {
+            margin-bottom: 0px;
+            }
+        }
+        @media (max-width: 900px) {
+            #container-flex-nav {
+            justify-content: center;
+            font-size: 1.2rem;
+            gap: 30px;
+            }
+            #grid {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            }
+            #cafe-story {
+            font-size: 1.2rem;
+            } 
+            #menu-flex {
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            }
+            .top-sellers-img {
+            height: 400px;
+            }
+            .top-sellers {
+            width: 75%;
+            }
+            #flex-delivery {
+            margin-left: 100px;
+            }
+            #flex-delivery > h2 {
+            font-size: 2.rem;
+            }
+            #flex-delivery > p {
+            font-size: 1.3rem;
+            }
+            #flex-delivery > button {
+            font-size: 1.5rem;
+            }
+            #order-online {
+                margin-bottom: 0px;
+            }
+            #order-online img {
+            width: 110%;
+            height: 55vh;
+            }
+            div#reviews {
+            height: 50vh;
+        }
+    }
+    @media (max-width: 620px) {
+            #container-flex-nav {
+            justify-content: center;
+            font-size: 1rem;
+            height: 100px;
+            gap: 20px;
+            }
+            #one-cafe-pic {
+            height: 60vh;
+            }
+            #grid {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;           
+            }
+            #cafe-story {
+            margin-left: 10px;
+            font-size: 1rem;
+            }
+            div#reviews {
+            height: 40vh;
+            }
+            #flex-delivery {
+            margin-left: 50px;
+            justify-content: space-evenly;
+            }
+            #flex-delivery > h2 {
+            font-size: 1.5rem;
+            }
+            #flex-delivery > p {
+            font-size: 1rem;
+            color: #373b00;
+            }
+            #flex-delivery > button {
+            font-size: 1.2rem;
+            padding: 15px;
+            }
+            #order-online {
+            grid-template-rows: 50vh;
+            margin-bottom: 50px;
+            }
+            #order-online img {
+            width: 110%;
+            height: 90%;
+            object-fit: cover;
+            }
+    }
+    @media (max-width: 520px) {
+        #container-flex-nav {
+            justify-content: center;
+            font-size: 1rem;
+            gap: 10px;
+        }
+        #logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        #one-cafe-pic {
+            height: 50vh;
+        }
+        #grid {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;            
+        }
+        #cafe-story {
+            margin-left: 10px;
+            font-size: 0.8rem;
+            padding: 2%;
+        } 
+        .top-sellers-img {
+            height: 400px;
+            object-fit: contain;
+            }
+            .top-sellers {
+            width: 90%;
+            }
+        #top-sellers-head {
+            font-size: 2.5rem;
+        }
+        div#reviews {
+            height: 30vh;
+            margin-bottom: 70px;
+        }
+            #flex-delivery {
+            margin-left: 40px;
+            justify-content: space-evenly;
+            }
+            #flex-delivery button {
+                font-size: 1rem;
+            }
+            #order-online {
+            grid-template-rows: 40vh;
+            }
+            #order-online img {
+            width: 110%;
+            height: 90%;
+            object-fit: cover;
+            }
+        footer {
+            font-size: 0.5rem;
+        }
+    }
+    @media (max-width: 430px) {
+        #container-flex-nav {
+            font-size: 0.7rem;
+            height: 70px;
+            gap: 10px;
+        }
+        #one-cafe-pic {
+            height: 40vh;
+        }
+        #cafe-story {
+            font-size: 0.6rem;
+        } 
+        .top-sellers-img {
+            height: 200px
+        }
+        .top-sellers {
+            width: 65%;
+        }
+        .top-sellers p.name {
+            font-size: 1.5rem;
+        }
+        .top-sellers p.info {
+            width: 70%;
+            font-size: smaller;
+        }
+        .top-sellers p.price {
+            font-size: smaller;
+        }
+        #whole-menu {
+            font-size: 1.5rem;
+        }
+        #flex-delivery {
+            margin-left: 30px;
+            justify-content: space-around;
+        }
+        #flex-delivery button {
+            font-size: 0.8rem;
+        }
+        #order-online {
+            margin-bottom: 80px;
+        }
+        #order-online img {
+            height: 100%;
+        }
+        #flex-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+    </style>
+</head>
+<body>
+<div id="flex">
+    <div id="container-flex-nav">
+            <img id="logo" src="./assets/images/logo.png" alt="logo">
+            <a href="#about-us">About us</a>
+            <a href="#menu">Menu</a>
+            <a href="#order">Order online</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact-us">Contact us</a>
+    </div>
+
+    <img id="one-cafe-pic" src="./assets/images/inside-flowers-cafe.jpg" alt="cafe inside">
+
+    <div id="about-us">
+    <div id="grid">
+            <div id="cafe-story">
+            <p>Mira’s tiny café serves coffee with a flower on every saucer. What began as a small gesture — a bloom beside a cup — has blossomed into a beloved local ritual. Here, rich espresso meets delicate petals, and every sip feels like a pause, a breath, a quiet joy. <br />
+
+            People come for the coffee, but stay for the warmth. Each table holds a story, each cup a moment of calm. Whether you're meeting a friend, escaping the rush, or simply treating yourself, Mira’s offers more than caffeine — it offers care.<br />
+
+            Lavender with your latte. Chamomile with your cappuccino. The flowers change with the seasons, but the feeling stays the same: welcoming, cozy, unforgettable.<br />
+
+            ☕ "Sip. Smile. Bloom."<br />
+
+            At Mira’s Café, it’s not just about the coffee — it’s about making your day a little more beautiful.</p>
+            </div>
+            <img src="./assets/images/coffee-flower.jpg">
+    </div>
+    </div>
+
+<hr />
+
+    
+     <h1 id="top-sellers-head">Top Sellers</h1>
+     <div id="menu">
+    <div id="menu-flex">
+
+
+        <div class="top-sellers">
+        <img src="./assets/images/top-seller-breakfast.jpg" class="top-sellers-img">
+        <p class="name">Toast with Fried Eggs</p>
+        <p class="info">Two perfectly fried eggs served on crispy 
+            golden toast, accompanied by sizzling strips of bacon
+             and a slice of warm garlic bread. Seasoned with sea 
+             salt and cracked black pepper for a rich, 
+            savory start to your day. Comfort food at its finest.</p>
+        <p class="price">€7.50</p>
+        </div>
+
+
+        <div class="top-sellers">
+        <img src="assets/images/top-seller-coffee-motcha.jpg" class="top-sellers-img">
+        <p class="name">Vanila Iced Coffee</p>
+        <p class="info">Chilled, smooth-brewed coffee
+             blended with creamy milk and a hint of rich 
+             vanilla syrup. Served over ice for a refreshing, 
+            lightly sweet pick-me-up—perfect for any time of day.</p>
+        <p class="price">€4.20</p>
+        </div>
+
+
+        <div class="top-sellers">
+        <img src="./assets/images/top-seller-cake.jpg" class="top-sellers-img">
+        <p class="name">Oreo Cheesecake</p>
+        <p class="info">A rich and creamy cheesecake layered 
+            with crushed Oreo cookies on a buttery Oreo crust.
+            Topped with whipped cream, chocolate drizzle, and
+            even more Oreo crumbles for the ultimate 
+            indulgence. A must-try for cookie lovers!</p>
+        <p class="price">€5.80</p>
+        </div>
+        
+        
+
+    </div>
+        <a id="whole-menui" href="./public/menu.html"><p id="whole-menu">
+            See the whole menu
+        </p></a>
+        </div>
+
+
+
+ 
+
+<hr />
+    <div id="order">
+        <div id="order-online">
+
+            <div id="flex-delivery" >
+                <h2>Fastest Delivery & Easy Pickup</h2>
+                <p>Order anything at any time and we
+                 will deliver it directly to your home.</p>
+                 <button>Make an order</button>
+            </div>
+                 <img src="./assets/images/toasts - Edited.png" >
+           
+        </div>
+    </div>
+
+<hr />
+       <div id="reviews">
+            <h1>Reviews</h1>
+            <img id="st" src="./assets/images/Screenshot 2025-08-06 222249.png">
+            <img id="nd" src="./assets/images/Screenshot 2025-08-06 222301.png">
+
+        </div>
+
+<hr />
+
+
+        <div id="contact-us">
+            <h2>Contact Us</h2>
+
+             <div id="flex-icons">
+                <img src="./assets/images/phone (1).png" />
+                <img src="./assets/images/email.png" />
+                <img src="./assets/images/map.png"/>
+                <img src="./assets/images/facebook.png"/>
+                <img src="./assets/images/instagram.png"/>
+             </div>
+        </div>
+
+        <footer>Copyright © Bean&Bloom</footer>
+</div>
+
+</body>
+</html>

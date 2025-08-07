@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style>
+        body {
+            background-color: #FBF2DD;
+            height: 120vh;
+        }
+        #grid{
+            display: grid;
+            background-color: #e2d9ff;
+            grid-template-columns: minmax(20vw, 30vw) 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            height: 118vh;
+            width: 100vw;
+            gap: 2px;
+        }
+        #menu-img > img {
+            height: 98%;
+            width: 100%;             
+            min-width: 30vw;
+            max-width: 40vw;
+            object-fit: cover; 
+        }
+        #menu-img {
+            height: 100%;
+            min-width: 30vw;
+            max-width: 40vw;
+            grid-row: 1 / 4;
+        }
+        h2 {
+            color: #6852ae;
+            text-transform: uppercase;
+            font-size: 3rem;
+            text-align: center;
+        }
+        li {
+            color: #29224d ;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        li {
+            list-style-type: none;
+            padding: 0;
+        }
+        div#grid div {
+            background-color: #FBF2DD;
+            padding: 20px;
+        }
+        div#cakes {
+            grid-column: 2/3;
+        }
+        div#snacks {
+            grid-column: 3/4;
+        }
+        div#additional {
+            width: 100%;
+            grid-column: 1/-1;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <div id="menu-img">
+            <img src="../assets/images/menu-picture.jpg"/>
+        </div>
+        <div id="coffees">
+            <h2>Coffees</h2>
+            <ul>
+                <li>Latte</li>
+                <li>Motcha</li>
+                <li>Americano</li>
+                <li>Cappuccino</li>
+                <li>Flavoured Latte</li>
+                <li>Espresso</li>
+                <li>Caramel Latte</li>
+                <li>Bubble Coffee</li>
+            </ul>
+        </div>
+
+        <div id="Iced-Coffees">
+            <h2>Iced Coffees</h2>
+            <ul>
+                <li>Iced Motcha</li>
+                <li>Vanila Iced Coffee</li>
+                <li>Iced Caramel Latte </li>
+            </ul>
+        </div>
+
+        <div id="iced-teas">
+            <h2>Iced Teas</h2>
+            <ul>
+                <li>Jasmine & Lime Iced Tea</li>
+                <li>Green Iced Tea</li>
+                <li>Bubble Iced Tea</li>
+            </ul>
+        </div>
+
+        <div id="teas">
+            <h2>Teas</h2>
+            <ul>
+                <li>Black Tea</li>
+                <li>Traditional Tea </li>
+                <li>Tropical Tea </li>
+
+            </ul>
+        </div>
+
+        <div id="cakes">
+            <h2>Cakes</h2>
+            <ul>
+                <li>Red Velvet</li>
+                <li>Oreo Cheesecake</li>
+                <li>Banana Pudding</li>
+                <li>Salted Caramel</li>
+            </ul>
+        </div>
+
+        <div id="snacks">
+            <h2>Snacks</h2>
+            <ul>
+                <li>Toast with Fried Eggs</li>
+                <li>Honey Waffles</li>
+                <li>Berry Pancakes</li>
+                <li>Veggie Omlette</li>
+            </ul>
+        </div>
+
+        <div id="additional"></div>
+
+    </div>
+</body>
+</html>
